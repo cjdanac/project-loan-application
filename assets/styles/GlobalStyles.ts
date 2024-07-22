@@ -1,7 +1,6 @@
 import { Dimensions, TouchableNativeFeedback } from "react-native";
 import { ScreenReplaceTypes, StackAnimationTypes } from "react-native-screens";
-import { ShadowProps } from "react-native-shadow-2";
-import { ToastPosition } from "react-native-toast-message";
+
 
 export const MobileWidth = Dimensions.get("window").width;
 export const MobileHeight = Dimensions.get("window").height;
@@ -177,7 +176,6 @@ export const Align = {
   spaceBetween: "space-between" as const,
   flexEnd: "flex-end" as const,
   absolute: "absolute" as const,
-  bottom: "bottom" as ToastPosition,
 };
 export const Gap = {
   gap4: 4,
@@ -246,7 +244,7 @@ export const ShadowTopStyle = {
     sides: {
       top: true,
     },
-  } as ShadowProps,
+  } 
 };
 
 
@@ -269,7 +267,7 @@ export const ShadowBottomStyle = {
     sides: {
       top: true,
     },
-  } as ShadowProps,
+  }
 };
 export const ShadowDrawerBottomStyle = {
   shadow: {
@@ -280,7 +278,7 @@ export const ShadowDrawerBottomStyle = {
     sides: {
       top: false,
     },
-  } as ShadowProps,
+  }
 };
 
 export const ShadowAddAccountStyle = {
@@ -289,7 +287,7 @@ export const ShadowAddAccountStyle = {
     offset: [0, 4],
     distance: 4,
     stretch: true,
-  } as ShadowProps,
+  } 
 };
 
 export const ShadowMfaStyle = {
@@ -298,7 +296,7 @@ export const ShadowMfaStyle = {
     offset: [0, 6],
     distance: 4,
     stretch: true,
-  } as ShadowProps,
+  } 
 };
 
 export const AnimationLayout = {

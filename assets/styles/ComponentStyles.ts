@@ -12,6 +12,17 @@ import {
 } from "./GlobalStyles";
 
 export const ComponentStyles = StyleSheet.create({
+  proceedButtonDisabled: {
+    backgroundColor: '#C0C0C0',
+    borderRadius: 5,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  proceedButtonLabelDisabled: {
+    color: '#A0A0A0', 
+    fontSize: 16,
+  },
   loginContainer: {
     flex: 1,
     flexDirection: "row",
@@ -126,7 +137,7 @@ export const ComponentStyles = StyleSheet.create({
     alignItems: "center",
   },
   uploadButtonText: {
-    fontFamily: FontFamily.default,
+
     ...BodyFontRegular.small,
     fontWeight: 700,
     lineHeight: 16,
@@ -139,7 +150,7 @@ export const ComponentStyles = StyleSheet.create({
     shadowOpacity: 0.1,
   },
   submitButtonText: {
-    fontFamily: FontFamily.default,
+
     ...BodyFontRegular.medium,
     fontWeight: 600,
     color: Color.white,
@@ -154,29 +165,25 @@ export const ComponentStyles = StyleSheet.create({
     color: Color.gray500,
   },
   paymentItem: {
-    fontFamily: FontFamily.item,
-    fontWeight: 400,
+ 
     ...BodyFontRegular.large,
     lineHeight: 24,
     color: Color.gray500,
   },
   paymentQtyItem: {
-    fontFamily: FontFamily.item,
-    fontWeight: 400,
+
     ...BodyFontRegular.medium,
     lineHeight: 19,
     color: Color.gray400,
   },
   itemTotalCount: {
-    fontFamily: FontFamily.default,
-    fontWeight: 600,
+
     ...BodyFontRegular.medium,
     lineHeight: 24,
     color: Color.gray500,
   },
   itemTotalPrice: {
-    fontFamily: FontFamily.default,
-    fontWeight: 700,
+
     ...BodyFontRegular.medium,
     lineHeight: 24,
     color: Color.gray400,
@@ -201,8 +208,7 @@ export const ComponentStyles = StyleSheet.create({
     width: 800,
   },
   itemPrice: {
-    fontFamily: FontFamily.default,
-    fontWeight: 700,
+  
     ...BodyFontRegular.large,
     lineHeight: 24,
     color: Color.gray400,
@@ -465,8 +471,6 @@ export const ComponentStyles = StyleSheet.create({
   },
   themedInput: {
     flex: 1,
-    fontFamily: FontFamily.default,
-    fontWeight: "400",
     ...BodyFontRegular.medium,
     color: Color.placeholder_qty,
     lineHeight: 24,
@@ -847,7 +851,7 @@ export const ComponentStyles = StyleSheet.create({
     fontWeight: 700,
   },
   tableHeaderLabel3: {
-    fontFamily: FontFamily.default,
+ 
     ...HeadingFont.heading2,
     color: Color.primary,
     justifyContent: "center",
@@ -855,7 +859,7 @@ export const ComponentStyles = StyleSheet.create({
     fontWeight: 700,
   },
   amountReceived: {
-    fontFamily: FontFamily.default,
+
     ...BodyFontRegular.small,
     lineHeight: 16,
     fontWeight: 400,

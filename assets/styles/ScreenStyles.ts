@@ -8,9 +8,52 @@ import {
 } from "./GlobalStyles";
 
 export const ScreenStyles = StyleSheet.create({
+  container1: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    elevation: 2,
+  },
+  scrollViewContainer:{
+    padding: 20, 
+    flexGrow: 1,
+  }
+  ,
+  table1:{
+ width: '50%', 
+ textAlign: 'right', 
+ marginLeft: 5
+  },
+  header1: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 8,
+  },
+  cell: {
+    flex: 1,
+    textAlign: 'center',
+  },
   container3: {
     padding: 20,
   },
+  text:{
+    fontSize: 16,
+    fontWeight: 'bold',
+    paddingBottom:10
+  },
+  title: {
+    paddingTop: 24,
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center'
+},
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -21,10 +64,18 @@ export const ScreenStyles = StyleSheet.create({
     marginBottom: 5,
   },
   input: {
-    height: 40,
+    fontSize: 14,
+    height: 50,
     borderColor: 'gray',
     borderWidth: 1,
     marginBottom: 20,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+  },
+  input2:{
+    height: 50, 
+    borderRadius: 8,
+    borderColor: 'gray',
     paddingHorizontal: 10,
   },
   defaultFlexLayout: {

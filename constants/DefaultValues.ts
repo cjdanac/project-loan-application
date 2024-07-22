@@ -1,10 +1,11 @@
 export const DefaultValues = {
     LOAN_AMOUNT: "Loan Amount",
-    TERM_MONTHS: "Term(months)",
+    TERM_MONTHS: "Loan Term (months)",
     INTEREST_RATE: "Interest Rate",
     YES: "Yes",
-    NO: "No"
-    
+    NO: "No",
+    ARE_YOU_SURE: "Are you sure you want to proceed?",
+    MONTH: " Month"
   };
   
   export const Sizes = [

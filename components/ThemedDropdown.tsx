@@ -2,8 +2,7 @@ import { View } from "react-native";
 import React from "react";
 import { Dropdown } from "react-native-element-dropdown";
 import { ComponentStyles } from "../assets/styles/ComponentStyles";
-import { Color, MainLayoutGradient } from "../assets/styles/GlobalStyles";
-// import ChevronDown from '../assets/images/Icons/chevron-down-gray.svg'
+import { Color } from "../assets/styles/GlobalStyles";
 import { ThemedLabel } from "./ThemedLabel";
 
 export type ThemedDropdownProps = {

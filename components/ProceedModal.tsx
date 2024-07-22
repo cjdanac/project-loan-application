@@ -1,30 +1,59 @@
-import { View, Modal } from "react-native";
+import { View, Modal, Alert } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import { ComponentStyles } from "../assets/styles/ComponentStyles";
 import { ThemedLabel } from "./ThemedLabel";
 import { ThemedView } from "./ThemedView";
 import { ThemedButton } from "./ThemedButton";
 import { DefaultValues } from "@/constants/DefaultValues";
-import Close from "../assets/";
-type ProductModalProps = {
+import Close from "../assets/icons/close-gray.svg"
+import { loan, LoanModel } from "project-loanapp";
+
+
+type ProceedModalProps = {
   question: string;
   modalVisible?: boolean;
-  onClose?: () => void;
-  handleYes?: () => void;
+  onClose: () => void;
+  handleYes: () => void;
+  visible?: boolean;
+  amount?: number;
+  loanTerm?: number;
+  monthlyPayment?: number;
+  paymentDates?: Date;
 };
 
 const ProceedModal = ({
   question,
+  visible,
   modalVisible,
   onClose,
-  handleYes,
-}: ProductModalProps) => {
+  loanTerm,
+  monthlyPayment,
+   amount,
+   handleYes
+
+}: ProceedModalProps) => {
+  const handleYesClick = async () => {
+    const formModel = new LoanModel({
+      payload: {
+        loanAmount: amount,
+        interestPerMonth: 1.5,
+        loanTerm,
+        monthlyPayment,
+      },
+    });
+    const response = await loan(formModel);
+    console.log(response)
+    if (response) {
+      Alert.alert("Success");
+      handleYes();
+    }
+  };
   return (
     <View>
       <Modal
         animationType="none"
-        visible={modalVisible}
+        visible={visible}
         statusBarTranslucent={true}
         onRequestClose={onClose}
         transparent={true}
@@ -56,7 +85,7 @@ const ProceedModal = ({
                   textStyle={ComponentStyles.promptYesButtonLabel}
                   buttonStyle={ComponentStyles.promptYesButton}
                   onPress={() => {
-                    handleYes();
+                    handleYesClick();
                     onClose();
                   }}
                 />
