@@ -8,6 +8,7 @@ import { ThemedButton } from "./ThemedButton";
 import { DefaultValues } from "@/constants/DefaultValues";
 import Close from "../assets/icons/close-gray.svg"
 import { loan, LoanModel } from "project-loanapp";
+import Toast from "react-native-toast-message";
 
 
 type ProceedModalProps = {
@@ -33,22 +34,38 @@ const ProceedModal = ({
    handleYes
 
 }: ProceedModalProps) => {
-  const handleYesClick = async () => {
-    const formModel = new LoanModel({
-      payload: {
-        loanAmount: amount,
-        interestPerMonth: 1.5,
-        loanTerm,
-        monthlyPayment,
-      },
-    });
-    const response = await loan(formModel);
-    console.log(response)
-    if (response) {
-      Alert.alert("Success");
-      handleYes();
-    }
-  };
+    const handleYesClick = async () => {
+      try {
+        const formModel = new LoanModel({
+          payload: {
+            loanAmount: amount,
+            interestPerMonth: 1.5,
+            loanTerm,
+            monthlyPayment,
+          },
+        });
+        const response = await loan(formModel);
+        if (response) {
+          Alert.alert("Success");
+          handleYes();
+        } else {
+          Toast.show({
+            type: 'error',
+            position: 'bottom',
+            text1: 'Request Failed',
+            text2: 'Please try again later.',
+          });
+        }
+      } catch (error) {
+        Toast.show({
+          type: 'error',
+          position: 'bottom',
+          text1: 'An error occurred',
+          text2: 'Please check your connection or try again later.',
+        });
+      }
+    };
+  
   return (
     <View>
       <Modal

@@ -34,24 +34,16 @@ type LoanFormProps = {
       if (!amount || !interestRate || !term) {
         return '0';
       }
-  
       const monthlyRate = interestRate / 12;
       const monthlyPayment = amount * (monthlyRate / (1 - Math.pow((1 + monthlyRate), -term)));
-      console.log("amount: ",amount)
-      console.log("monthlyRate: ",monthlyRate)
-      console.log("monthlyPayment: ",monthlyPayment)
 
       return monthlyPayment.toFixed(2);
     };
 
-    
-  
     const handleSubmit = () => {
       const payment = calculateMonthlyPayment(amount, interestRate, selectedTerm);
       setMonthlyPayment(Number(payment));
       setIsVisible(true);
-      console.log("sss",Environment.API_URL)
-
     };
     const handleYes = () => {
       setShowTable(true); 
@@ -134,7 +126,7 @@ type LoanFormProps = {
         amount={amount}
         loanTerm={selectedTerm}
         monthlyPayment={monthlyPayment}
-        
+
       />
     </ScrollView>
   );
